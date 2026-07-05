@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowDown } from "lucide-react";
 import { HERO_CONTENT, SITE_CONFIG } from "@/lib/constants";
 
@@ -55,10 +56,15 @@ export function Hero() {
 
         {/* Right: Portrait (40%) */}
         <div className="order-1 flex justify-center lg:order-2 lg:col-span-2 lg:justify-end">
-          <div className="h-[480px] w-[380px] rounded-xl border border-border bg-surface shadow-sm lg:h-[600px] lg:w-[480px]">
-            <div className="flex h-full w-full items-center justify-center rounded-xl text-sm text-text-muted">
-              Portrait placeholder
-            </div>
+          <div className="relative h-[480px] w-[380px] overflow-hidden rounded-xl border border-border shadow-sm lg:h-[600px] lg:w-[480px]">
+            <Image
+              src="/images/profile/portrait.jpg"
+              alt="Bhushan Naik"
+              fill
+              priority
+              className="object-cover"
+              sizes="(max-width: 1024px) 380px, 480px"
+            />
           </div>
         </div>
       </div>
