@@ -12,7 +12,7 @@ export function Footer() {
               {SITE_CONFIG.name}
             </p>
             <p className="mt-1 text-sm text-text-muted">
-              {SITE_CONFIG.title} · Engineering Student
+              {SITE_CONFIG.title} · {SITE_CONFIG.subtitle}
             </p>
             <p className="mt-1 text-sm text-text-muted">Mumbai, India</p>
           </div>

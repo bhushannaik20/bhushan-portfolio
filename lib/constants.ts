@@ -14,5 +14,6 @@ export const NAV_ITEMS = [
 export const SITE_CONFIG = {
   name: "Bhushan Naik",
   title: "Aspiring Management Consultant",
-  monogram: "BSN",
+  subtitle: "Engineering Graduate",
+  monogram: "BN",
 } as const;
