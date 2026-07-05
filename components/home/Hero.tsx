@@ -45,7 +45,7 @@ export function Hero() {
               LinkedIn
             </Link>
             <Link
-              href="#contact"
+              href="/#contact"
               className="rounded-lg px-6 py-3 text-sm font-medium text-navy underline decoration-1 underline-offset-4 transition-colors hover:text-navy-light"
             >
               Contact
