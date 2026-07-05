@@ -17,7 +17,8 @@ export const SITE_CONFIG = {
   subtitle: "Engineering Graduate",
   monogram: "BN",
   linkedin: "https://www.linkedin.com/in/bhushannnaik/",
-  email: "rexbhushan14@gmail.com",
+  email: "bhushannaik.work@gmail.com",
+  phone: "+91 7745066672",
 } as const;
 
 export const HERO_CONTENT = {

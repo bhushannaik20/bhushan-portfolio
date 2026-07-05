@@ -7,6 +7,7 @@ import { ConsultingSection } from "@/components/consulting/ConsultingSection";
 import { RecognitionSection } from "@/components/recognition/RecognitionSection";
 import { PublicationsSection } from "@/components/publications/PublicationsSection";
 import { CoursesSection } from "@/components/courses/CoursesSection";
+import { ContactSection } from "@/components/contact/ContactSection";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
       <RecognitionSection />
       <PublicationsSection />
       <CoursesSection />
+      <ContactSection />
     </main>
   );
 }
