@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter, IBM_Plex_Serif } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import { Navbar } from "@/components/layout/Navbar";
+import { Footer } from "@/components/layout/Footer";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -31,7 +33,9 @@ export default function RootLayout({
       className={cn("h-full", "antialiased", inter.variable, ibmPlexSerif.variable)}
     >
       <body className="min-h-full flex flex-col font-sans bg-white text-text-primary">
-        {children}
+        <Navbar />
+        <div className="flex-1">{children}</div>
+        <Footer />
       </body>
     </html>
   );
