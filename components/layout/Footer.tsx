@@ -19,7 +19,7 @@ export function Footer() {
 
           <div className="flex items-center gap-5">
             <Link
-              href="https://linkedin.com/in/your-linkedin-handle"
+              href={SITE_CONFIG.linkedin}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-1.5 text-sm text-navy hover:text-navy-light"
@@ -28,7 +28,7 @@ export function Footer() {
               <ExternalLink className="h-3.5 w-3.5" strokeWidth={1.75} />
             </Link>
             <Link
-              href="mailto:rexbhushan14@gmail.com"
+              href={`mailto:${SITE_CONFIG.email}`}
               aria-label="Send email"
               className="text-navy hover:text-navy-light"
             >
