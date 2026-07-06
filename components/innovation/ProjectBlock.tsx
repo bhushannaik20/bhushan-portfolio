@@ -33,7 +33,7 @@ export function ProjectBlock({
               href={project.liveDemoUrl ?? project.publicationUrl ?? "#"}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-4 flex items-center justify-between border-t border-border pt-4 text-xs font-bold uppercase tracking-wide text-crimson"
+              className="mt-4 flex w-full items-center justify-center gap-2 rounded-lg bg-navy px-6 py-3.5 text-xs font-bold uppercase tracking-wide text-white shadow-sm transition-colors hover:bg-navy-light"
             >
               {project.liveDemoUrl ? "Live Demo" : "View Publication"}
               <ExternalLink className="h-3.5 w-3.5" strokeWidth={2} />

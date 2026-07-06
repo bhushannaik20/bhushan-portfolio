@@ -21,11 +21,11 @@ export function Hero() {
 
           <div className="hero-gradient-bar mt-4 h-1 w-20 rounded-full" />
 
-          <h1 className="mt-5 font-serif text-6xl font-bold leading-[1.05] tracking-[-0.02em] text-navy lg:text-[84px]">
+          <h1 className="mt-5 font-serif text-6xl font-bold leading-[1.05] tracking-[-0.02em] text-text-primary lg:text-[84px]">
             {HERO_CONTENT.name}
           </h1>
 
-          <p className="mt-4 text-2xl font-semibold text-text-primary lg:text-[30px]">
+          <p className="mt-4 text-2xl font-semibold text-navy lg:text-[30px]">
             {HERO_CONTENT.title}
           </p>
 
@@ -43,18 +43,18 @@ export function Hero() {
               Resume
             </Link>
             <Link
+              href="/#contact"
+              className="rounded-lg border-2 border-navy px-6 py-3 text-xs font-bold uppercase tracking-wide text-navy transition-colors hover:bg-navy/5"
+            >
+              Contact
+            </Link>
+            <Link
               href={SITE_CONFIG.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-lg border border-navy px-6 py-3 text-xs font-bold uppercase tracking-wide text-navy transition-colors hover:bg-surface"
+              className="rounded-lg bg-gold px-6 py-3 text-xs font-bold uppercase tracking-wide text-white transition-colors hover:opacity-90"
             >
               LinkedIn
-            </Link>
-            <Link
-              href="/#contact"
-              className="rounded-lg px-6 py-3 text-xs font-bold uppercase tracking-wide text-navy underline decoration-1 underline-offset-4 transition-colors hover:text-navy-light"
-            >
-              Contact
             </Link>
           </div>
         </div>

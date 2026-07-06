@@ -10,18 +10,13 @@ export function PublicationBlock({
   return (
     <div className="rounded-2xl border border-border bg-white p-8 shadow-sm">
       <div className="flex items-start gap-4">
-        <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-crimson/10">
-          <FileText className="h-5 w-5 text-crimson" strokeWidth={1.75} />
+        <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-navy/5">
+          <FileText className="h-5 w-5 text-navy" strokeWidth={1.75} />
         </span>
         <div className="flex-1">
-          <div className="flex flex-wrap items-center gap-3">
-            <span className="rounded-full bg-crimson/10 px-3 py-1 text-[11px] font-bold uppercase tracking-wide text-crimson">
-              Research
-            </span>
-            <span className="text-xs font-semibold uppercase tracking-wide text-text-muted">
-              {publication.publisher}
-            </span>
-          </div>
+          <p className="text-xs font-bold uppercase tracking-wide text-text-muted">
+            {publication.publisher}
+          </p>
 
           <h3 className="mt-3 font-serif text-xl font-bold text-navy lg:text-2xl">
             {publication.title}

@@ -10,8 +10,6 @@ export function CaseBlock({
   caseItem: ConsultingCase;
   index: number;
 }) {
-  const orderNumber = String(index + 1).padStart(2, "0");
-
   return (
     <div className="rounded-2xl border border-border bg-white p-6 shadow-sm lg:p-10">
       <div className="grid grid-cols-1 gap-10 lg:grid-cols-[360px_1fr]">
@@ -30,7 +28,7 @@ export function CaseBlock({
             href={caseItem.presentationDeckUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-4 flex items-center justify-between border-t border-border pt-4 text-xs font-bold uppercase tracking-wide text-crimson"
+            className="mt-4 flex w-full items-center justify-center gap-2 rounded-lg bg-navy px-6 py-3.5 text-xs font-bold uppercase tracking-wide text-white shadow-sm transition-colors hover:bg-navy-light"
           >
             Presentation Deck
             <ExternalLink className="h-3.5 w-3.5" strokeWidth={2} />
