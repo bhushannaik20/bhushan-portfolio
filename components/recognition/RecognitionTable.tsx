@@ -1,35 +1,50 @@
 import { RECOGNITION } from "@/lib/data/recognition";
 
+const ACHIEVEMENT_STYLES: Record<string, string> = {
+  Winner: "bg-forest/10 text-forest",
+  "1st Runner Up": "bg-royal/10 text-royal",
+  Finalist: "bg-royal/10 text-royal",
+  "Grand Finale Finalist": "bg-crimson/10 text-crimson",
+  Shortlisted: "bg-surface text-text-muted border border-border",
+};
+
 export function RecognitionTable() {
   return (
-    <div className="overflow-x-auto rounded-xl border border-border">
-      <table className="w-full min-w-[640px] border-collapse text-sm">
-        <thead>
-          <tr className="border-b border-border bg-surface">
-            <th scope="col" className="px-4 py-3 text-left font-semibold text-navy">Sr.</th>
-            <th scope="col" className="px-4 py-3 text-left font-semibold text-navy">Competition</th>
-            <th scope="col" className="px-4 py-3 text-left font-semibold text-navy">Organising Body</th>
-            <th scope="col" className="px-4 py-3 text-left font-semibold text-navy">Achievement</th>
-            <th scope="col" className="px-4 py-3 text-left font-semibold text-navy">Year</th>
-          </tr>
-        </thead>
-        <tbody>
-          {RECOGNITION.map((entry, index) => (
-            <tr
-              key={entry.sr}
-              className={`border-b border-border last:border-b-0 hover:bg-surface ${
-                index % 2 === 1 ? "bg-surface/50" : "bg-white"
+    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-1">
+      {RECOGNITION.map((entry) => (
+        <div
+          key={entry.sr}
+          className="flex flex-col gap-4 rounded-xl border border-border bg-white p-6 shadow-sm transition-transform hover:-translate-y-0.5 lg:flex-row lg:items-center lg:justify-between"
+        >
+          <div className="flex items-start gap-4">
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-navy font-serif text-sm font-semibold text-white">
+              {String(entry.sr).padStart(2, "0")}
+            </span>
+            <div>
+              <p className="font-serif text-lg font-semibold text-navy">
+                {entry.competition}
+              </p>
+              <p className="mt-1 text-sm text-text-muted">
+                {entry.organisingBody}
+              </p>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-3 pl-14 lg:pl-0">
+            <span
+              className={`rounded-full px-4 py-1.5 text-xs font-semibold ${
+                ACHIEVEMENT_STYLES[entry.achievement] ??
+                "bg-surface text-text-muted"
               }`}
             >
-              <td className="px-4 py-3 text-text-muted">{entry.sr}</td>
-              <td className="px-4 py-3 font-medium text-text-primary">{entry.competition}</td>
-              <td className="px-4 py-3 text-text-muted">{entry.organisingBody}</td>
-              <td className="px-4 py-3 font-medium text-crimson">{entry.achievement}</td>
-              <td className="px-4 py-3 text-text-muted">{entry.year}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+              {entry.achievement}
+            </span>
+            <span className="text-sm font-medium text-text-muted">
+              {entry.year}
+            </span>
+          </div>
+        </div>
+      ))}
     </div>
   );
 }

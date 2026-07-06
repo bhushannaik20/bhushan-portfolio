@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ExternalLink } from "lucide-react";
 import { ConsultingCase } from "@/types/consulting-case";
 
@@ -19,8 +20,14 @@ export function CaseBlock({
         }`}
       >
         <div className={isReversed ? "lg:[direction:ltr]" : ""}>
-          <div className="flex aspect-[4/3] items-center justify-center rounded-xl border border-border bg-surface text-sm text-text-muted">
-            {caseItem.client} — logo placeholder
+          <div className="relative aspect-[4/3] overflow-hidden rounded-xl border border-border bg-surface">
+            <Image
+              src={`/images/consulting/${caseItem.id}/cover.jpg`}
+              alt={caseItem.title}
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+            />
           </div>
         </div>
 

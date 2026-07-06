@@ -1,6 +1,8 @@
+import Image from "next/image";
+
 export function StartupRecognitionCard() {
   return (
-    <div className="mt-10 rounded-xl border border-border bg-surface p-8">
+    <div className="mt-10 rounded-2xl border border-border bg-white p-8 shadow-sm">
       <p className="text-xs font-medium uppercase tracking-[0.15em] text-navy">
         Startup Recognition
       </p>
@@ -19,6 +21,25 @@ export function StartupRecognitionCard() {
         technology-led innovations across sustainability, mobility, renewable
         energy and public sector transformation.
       </p>
+
+      <div className="mt-6 flex flex-wrap items-center gap-6 border-t border-border pt-6">
+        <div className="relative h-12 w-32">
+          <Image
+            src="/images/logos/aic-nifie.png"
+            alt="AIC-NIFIE"
+            fill
+            className="object-contain object-left"
+          />
+        </div>
+        <div className="relative h-12 w-32">
+          <Image
+            src="/images/logos/iim-mumbai.png"
+            alt="IIM Mumbai"
+            fill
+            className="object-contain object-left"
+          />
+        </div>
+      </div>
     </div>
   );
 }

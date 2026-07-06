@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ExternalLink } from "lucide-react";
 import { Project } from "@/types/project";
 
@@ -10,26 +11,50 @@ export function ProjectBlock({
   index: number;
 }) {
   const isReversed = index % 2 === 1;
+  const orderNumber = String(index + 1).padStart(2, "0");
 
   return (
-    <div className="border-t border-border pt-16 first:border-t-0 first:pt-0">
+    <div className="rounded-2xl border border-border bg-white p-6 shadow-sm lg:p-10">
       <div
-        className={`grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16 ${
+        className={`grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-16 ${
           isReversed ? "lg:[direction:rtl]" : ""
         }`}
       >
-        {/* Image placeholder */}
+        {/* Image + CTA below it */}
         <div className={isReversed ? "lg:[direction:ltr]" : ""}>
-          <div className="flex aspect-[4/3] items-center justify-center rounded-xl border border-border bg-surface text-sm text-text-muted">
-            Project image placeholder
+          <div className="relative aspect-[4/3] overflow-hidden rounded-xl border border-border bg-surface">
+            <Image
+              src={`/images/projects/${project.id}/cover.jpg`}
+              alt={project.title}
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+            />
           </div>
+
+          {(project.liveDemoUrl || project.publicationUrl) && (
+            <Link
+              href={project.liveDemoUrl ?? project.publicationUrl ?? "#"}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-navy px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-navy-light"
+            >
+              {project.liveDemoUrl ? "Live Demo" : "View Publication"}
+              <ExternalLink className="h-4 w-4" strokeWidth={1.75} />
+            </Link>
+          )}
         </div>
 
         {/* Content */}
         <div className={isReversed ? "lg:[direction:ltr]" : ""}>
-          <p className="text-xs font-medium uppercase tracking-[0.15em] text-navy">
-            {project.metadata.domain.join(" · ")}
-          </p>
+          <div className="flex items-center gap-3">
+            <span className="font-serif text-3xl font-semibold text-royal/30">
+              {orderNumber}
+            </span>
+            <p className="text-xs font-medium uppercase tracking-[0.15em] text-navy">
+              {project.metadata.domain.join(" · ")}
+            </p>
+          </div>
           <h3 className="mt-3 font-serif text-2xl font-semibold text-navy lg:text-3xl">
             {project.title}
           </h3>
@@ -39,7 +64,6 @@ export function ProjectBlock({
             </p>
           )}
 
-          {/* Metadata table */}
           <div className="mt-6 space-y-2 rounded-lg border border-border bg-surface p-4 text-sm">
             <div className="flex justify-between gap-4">
               <span className="text-text-muted">Role</span>
@@ -133,18 +157,6 @@ export function ProjectBlock({
                 </span>
               ))}
             </div>
-          )}
-
-          {(project.liveDemoUrl || project.publicationUrl) && (
-            <Link
-              href={project.liveDemoUrl ?? project.publicationUrl ?? "#"}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-8 inline-flex items-center gap-2 rounded-lg bg-navy px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-navy-light"
-            >
-              {project.liveDemoUrl ? "Live Demo" : "View Publication"}
-              <ExternalLink className="h-4 w-4" strokeWidth={1.75} />
-            </Link>
           )}
         </div>
       </div>

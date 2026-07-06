@@ -18,7 +18,7 @@ export function ConsultingSection() {
           and implementation-focused recommendations.
         </p>
 
-        <div className="mt-16 space-y-16 lg:space-y-24">
+        <div className="mt-16 space-y-10">
           {CONSULTING_CASES.map((caseItem, index) => (
             <CaseBlock key={caseItem.id} caseItem={caseItem} index={index} />
           ))}

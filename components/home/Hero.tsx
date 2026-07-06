@@ -10,13 +10,16 @@ export function Hero() {
       className="relative flex min-h-screen items-center pt-20"
     >
       <div className="mx-auto grid w-full max-w-[1280px] grid-cols-1 items-center gap-12 px-6 py-20 lg:grid-cols-5 lg:gap-16 lg:px-10">
-        {/* Left: Content (60%) */}
         <div className="order-2 lg:order-1 lg:col-span-3">
-          <p className="text-xs font-medium uppercase tracking-[0.15em] text-crimson">
+          <span className="inline-block rounded-full border border-royal/30 bg-royal/5 px-4 py-1.5 text-xs font-semibold text-royal">
+            {HERO_CONTENT.badge}
+          </span>
+
+          <p className="mt-4 text-xs font-semibold uppercase tracking-[0.15em] text-navy">
             {HERO_CONTENT.eyebrow}
           </p>
 
-          <h1 className="mt-6 font-serif text-5xl font-semibold leading-[1.1] tracking-[-0.02em] text-navy lg:text-[80px]">
+          <h1 className="mt-3 font-serif text-5xl font-semibold leading-[1.1] tracking-[-0.02em] text-navy lg:text-[80px]">
             {HERO_CONTENT.name}
           </h1>
 
@@ -54,7 +57,6 @@ export function Hero() {
           </div>
         </div>
 
-        {/* Right: Portrait (40%) */}
         <div className="order-1 flex justify-center lg:order-2 lg:col-span-2 lg:justify-end">
           <div className="relative h-[480px] w-[380px] overflow-hidden rounded-xl border border-border shadow-sm lg:h-[600px] lg:w-[480px]">
             <Image

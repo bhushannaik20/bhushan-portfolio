@@ -19,9 +19,11 @@ export const SITE_CONFIG = {
   linkedin: "https://www.linkedin.com/in/bhushannnaik/",
   email: "bhushannaik.work@gmail.com",
   phone: "+91 7745066672",
+  youtube: "https://www.youtube.com/@bhushannaik2793",
 } as const;
 
 export const HERO_CONTENT = {
+  badge: "Alumnus of Ministry of Education's Innovation Cell",
   eyebrow: "#ViksitBharat@2047",
   name: "Bhushan Naik",
   title: "Aspiring Management Consultant",
@@ -30,7 +32,7 @@ export const HERO_CONTENT = {
 } as const;
 
 export const SELECTED_IMPACT = [
-  { number: "6+", label: "National Competition Winner" },
+  { number: "15+", label: "National-Level Competition Participations" },
   { number: "6+", label: "Technology Products" },
   { number: "5", label: "Strategy Cases" },
   { number: "2", label: "Research Publications" },

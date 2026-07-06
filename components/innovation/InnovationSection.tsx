@@ -20,7 +20,7 @@ export function InnovationSection() {
           implementation.
         </p>
 
-        <div className="mt-16 space-y-16 lg:space-y-24">
+        <div className="mt-16 space-y-10">
           {PROJECTS.map((project, index) => (
             <ProjectBlock key={project.id} project={project} index={index} />
           ))}

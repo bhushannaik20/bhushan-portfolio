@@ -1,13 +1,12 @@
+import { GraduationCap, MapPin, Target, Sparkles, Languages } from "lucide-react";
+
 const ABOUT_INFO = [
-  { label: "Status", value: "Engineering Graduate" },
-  {
-    label: "Institution",
-    value: "Fr. Conceicao Rodrigues College of Engineering",
-  },
-  { label: "Location", value: "Mumbai, India" },
-  { label: "Career Goal", value: "Management Consulting" },
-  { label: "Interests", value: "Strategy · Innovation · Sustainability" },
-  { label: "Languages", value: "English · Hindi · Marathi" },
+  { icon: GraduationCap, label: "Academic Status", value: "Bachelor of Engineering Graduate (2026)" },
+  { icon: GraduationCap, label: "Institution", value: "Fr. Conceicao Rodrigues College of Engineering" },
+  { icon: MapPin, label: "Location", value: "Mumbai, India" },
+  { icon: Target, label: "Career Goal", value: "Management Consulting" },
+  { icon: Sparkles, label: "Interests", value: "Strategy · Innovation · Sustainability" },
+  { icon: Languages, label: "Languages", value: "English · Hindi · Marathi" },
 ];
 
 export function About() {
@@ -23,7 +22,6 @@ export function About() {
         </h2>
 
         <div className="mt-16 grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16">
-          {/* Left: Paragraphs */}
           <div className="space-y-6 text-base leading-relaxed text-text-muted lg:text-lg">
             <p>
               I am an engineering graduate driven by structured problem
@@ -50,23 +48,32 @@ export function About() {
             </p>
           </div>
 
-          {/* Right: Info Table */}
-          <div className="overflow-hidden rounded-xl border border-border bg-white">
-            {ABOUT_INFO.map((item, index) => (
-              <div
-                key={item.label}
-                className={`flex flex-col gap-1 px-6 py-4 sm:flex-row sm:items-center sm:justify-between ${
-                  index !== ABOUT_INFO.length - 1 ? "border-b border-border" : ""
-                }`}
-              >
-                <span className="text-sm font-medium text-text-muted">
-                  {item.label}
-                </span>
-                <span className="text-sm font-medium text-navy">
-                  {item.value}
-                </span>
-              </div>
-            ))}
+          <div className="overflow-hidden rounded-2xl border border-border bg-white shadow-sm">
+            {ABOUT_INFO.map((item, index) => {
+              const Icon = item.icon;
+              return (
+                <div
+                  key={item.label}
+                  className={`flex items-start gap-4 px-6 py-5 ${
+                    index !== ABOUT_INFO.length - 1
+                      ? "border-b border-border"
+                      : ""
+                  }`}
+                >
+                  <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-navy/5">
+                    <Icon className="h-4 w-4 text-navy" strokeWidth={1.75} />
+                  </span>
+                  <div>
+                    <p className="text-xs font-medium uppercase tracking-wide text-text-muted">
+                      {item.label}
+                    </p>
+                    <p className="mt-1 text-sm font-semibold text-navy">
+                      {item.value}
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>

@@ -1,4 +1,7 @@
+import Link from "next/link";
+import { Youtube } from "lucide-react";
 import { EXPERIENCE } from "@/lib/data/experience";
+import { SITE_CONFIG } from "@/lib/constants";
 
 export function Experience() {
   return (
@@ -16,13 +19,11 @@ export function Experience() {
         </p>
 
         <div className="relative mt-16">
-          {/* Vertical timeline line */}
-          <div className="absolute left-[7px] top-2 h-[calc(100%-1rem)] w-px bg-border lg:left-[7px]" />
+          <div className="absolute left-[7px] top-2 h-[calc(100%-1rem)] w-px bg-border" />
 
           <div className="space-y-16">
             {EXPERIENCE.map((entry) => (
               <div key={entry.id} className="relative pl-10">
-                {/* Timeline node */}
                 <div className="absolute left-0 top-2 h-3.5 w-3.5 rounded-full border-2 border-white bg-navy shadow-sm" />
 
                 <div className="rounded-xl border border-border bg-white p-8 shadow-sm transition-transform hover:-translate-y-1">
@@ -59,7 +60,7 @@ export function Experience() {
                   </ul>
 
                   {entry.stats && (
-                    <div className="mt-6 flex gap-8 border-t border-border pt-6">
+                    <div className="mt-6 flex flex-wrap items-center gap-8 border-t border-border pt-6">
                       {entry.stats.map((stat) => (
                         <div key={stat.label}>
                           <p className="font-serif text-2xl font-semibold text-navy">
@@ -70,6 +71,17 @@ export function Experience() {
                           </p>
                         </div>
                       ))}
+                      {entry.id === "content-creator" && (
+                        <Link
+                          href={SITE_CONFIG.youtube}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="ml-auto inline-flex items-center gap-2 rounded-lg border border-crimson px-4 py-2 text-sm font-medium text-crimson transition-colors hover:bg-crimson/5"
+                        >
+                          <Youtube className="h-4 w-4" strokeWidth={1.75} />
+                          Watch Channel
+                        </Link>
+                      )}
                     </div>
                   )}
                 </div>
