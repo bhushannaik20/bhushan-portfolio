@@ -11,19 +11,21 @@ export function Hero() {
     >
       <div className="mx-auto grid w-full max-w-[1280px] grid-cols-1 items-center gap-12 px-6 py-20 lg:grid-cols-5 lg:gap-16 lg:px-10">
         <div className="order-2 lg:order-1 lg:col-span-3">
-          <span className="inline-block rounded-full border border-royal/30 bg-royal/5 px-4 py-1.5 text-xs font-semibold text-royal">
+          <span className="inline-block rounded-full border border-navy/20 bg-navy/5 px-4 py-1.5 text-xs font-bold text-navy">
             {HERO_CONTENT.badge}
           </span>
 
-          <p className="mt-4 text-xs font-semibold uppercase tracking-[0.15em] text-navy">
+          <p className="mt-4 text-xs font-bold uppercase tracking-[0.15em] text-text-muted">
             {HERO_CONTENT.eyebrow}
           </p>
 
-          <h1 className="mt-3 font-serif text-5xl font-semibold leading-[1.1] tracking-[-0.02em] text-navy lg:text-[80px]">
+          <div className="hero-gradient-bar mt-4 h-1 w-20 rounded-full" />
+
+          <h1 className="mt-5 font-serif text-6xl font-bold leading-[1.05] tracking-[-0.02em] text-navy lg:text-[84px]">
             {HERO_CONTENT.name}
           </h1>
 
-          <p className="mt-4 text-xl font-semibold text-text-primary lg:text-2xl">
+          <p className="mt-4 text-2xl font-semibold text-text-primary lg:text-[30px]">
             {HERO_CONTENT.title}
           </p>
 
@@ -36,7 +38,7 @@ export function Hero() {
               href="/resume/bhushan-naik-resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-lg bg-navy px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-navy-light"
+              className="rounded-lg bg-navy px-6 py-3 text-xs font-bold uppercase tracking-wide text-white transition-colors hover:bg-navy-light"
             >
               Resume
             </Link>
@@ -44,13 +46,13 @@ export function Hero() {
               href={SITE_CONFIG.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-lg border border-navy px-6 py-3 text-sm font-medium text-navy transition-colors hover:bg-surface"
+              className="rounded-lg border border-navy px-6 py-3 text-xs font-bold uppercase tracking-wide text-navy transition-colors hover:bg-surface"
             >
               LinkedIn
             </Link>
             <Link
               href="/#contact"
-              className="rounded-lg px-6 py-3 text-sm font-medium text-navy underline decoration-1 underline-offset-4 transition-colors hover:text-navy-light"
+              className="rounded-lg px-6 py-3 text-xs font-bold uppercase tracking-wide text-navy underline decoration-1 underline-offset-4 transition-colors hover:text-navy-light"
             >
               Contact
             </Link>

@@ -2,14 +2,14 @@ import Image from "next/image";
 
 export function StartupRecognitionCard() {
   return (
-    <div className="mt-10 rounded-2xl border border-border bg-white p-8 shadow-sm">
-      <p className="text-xs font-medium uppercase tracking-[0.15em] text-navy">
+    <div className="mt-12 rounded-2xl border border-border bg-white p-8 shadow-sm">
+      <p className="text-xs font-bold uppercase tracking-[0.15em] text-navy">
         Startup Recognition
       </p>
-      <h3 className="mt-3 font-serif text-2xl font-semibold text-navy">
+      <h3 className="mt-3 font-serif text-2xl font-bold text-navy">
         SafeWay Innovations LLP
       </h3>
-      <p className="mt-1 text-sm font-medium text-text-muted">
+      <p className="mt-1 text-sm font-semibold text-text-muted">
         Pre-Incubated Startup
       </p>
       <p className="mt-1 text-sm text-text-muted">
@@ -22,16 +22,16 @@ export function StartupRecognitionCard() {
         energy and public sector transformation.
       </p>
 
-      <div className="mt-6 flex flex-wrap items-center gap-6 border-t border-border pt-6">
-        <div className="relative h-12 w-32">
+      <div className="mt-6 flex flex-wrap items-center gap-8 border-t border-border pt-6">
+        <div className="relative h-10 w-28">
           <Image
-            src="/images/logos/aic-nifie.png"
-            alt="AIC-NIFIE"
+            src="/images/logos/safeway.png"
+            alt="SafeWay Innovations LLP"
             fill
             className="object-contain object-left"
           />
         </div>
-        <div className="relative h-12 w-32">
+        <div className="relative h-10 w-28">
           <Image
             src="/images/logos/iim-mumbai.png"
             alt="IIM Mumbai"
