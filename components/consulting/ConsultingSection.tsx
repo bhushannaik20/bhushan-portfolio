@@ -3,12 +3,13 @@ import { CaseBlock } from "./CaseBlock";
 
 export function ConsultingSection() {
   return (
-    <section id="consulting" className="py-24 lg:py-32">
+    <section id="consulting" className="bg-white py-24 lg:py-32">
       <div className="mx-auto max-w-[1120px] px-6 lg:px-10">
-        <p className="text-xs font-medium uppercase tracking-[0.15em] text-navy">
+        <div className="accent-bar mb-4 h-1 w-16 rounded-full" />
+        <p className="text-xs font-bold uppercase tracking-[0.15em] text-navy">
           Consulting
         </p>
-        <h2 className="mt-4 font-serif text-3xl font-semibold text-navy lg:text-5xl">
+        <h2 className="mt-4 font-serif text-3xl font-bold text-navy lg:text-5xl">
           Strategy & Consulting Experience
         </h2>
         <p className="mt-4 max-w-[700px] text-base text-text-muted lg:text-lg">

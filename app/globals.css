@@ -4,17 +4,27 @@
   --font-sans: var(--font-sans);
   --font-serif: var(--font-serif);
 
-  --color-navy: #0f2a47;
-  --color-navy-light: #1e3a5f;
-  --color-royal: #1d4ed8;
-  --color-forest: #15803d;
-  --color-crimson: #b91c1c;
-  --color-surface: #f7f8fa;
-  --color-border: #e2e5ea;
-  --color-text-primary: #111827;
+  --color-navy: #0a2540;
+  --color-navy-light: #16406b;
+  --color-royal: #1e50e2;
+  --color-forest: #0f8a4b;
+  --color-crimson: #d21f3c;
+  --color-surface: #f4f6f9;
+  --color-border: #dde2ea;
+  --color-text-primary: #0f172a;
   --color-text-muted: #5b6472;
 }
 
 body {
   color: var(--color-text-primary);
+}
+
+.accent-bar {
+  background: linear-gradient(
+    90deg,
+    var(--color-navy) 0%,
+    var(--color-royal) 45%,
+    var(--color-forest) 75%,
+    var(--color-crimson) 100%
+  );
 }

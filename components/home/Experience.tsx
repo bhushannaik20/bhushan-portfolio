@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Youtube } from "lucide-react";
+import { PlayCircle } from "lucide-react";
 import { EXPERIENCE } from "@/lib/data/experience";
 import { SITE_CONFIG } from "@/lib/constants";
 
@@ -78,7 +78,7 @@ export function Experience() {
                           rel="noopener noreferrer"
                           className="ml-auto inline-flex items-center gap-2 rounded-lg border border-crimson px-4 py-2 text-sm font-medium text-crimson transition-colors hover:bg-crimson/5"
                         >
-                          <Youtube className="h-4 w-4" strokeWidth={1.75} />
+                          <PlayCircle className="h-4 w-4" strokeWidth={1.75} />
                           Watch Channel
                         </Link>
                       )}
