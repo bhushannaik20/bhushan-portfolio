@@ -17,7 +17,7 @@ export function ConsultingSection() {
           transformation and financial inclusion.
         </p>
 
-        <div className="mt-16 grid grid-cols-1 gap-8 lg:grid-cols-2">
+        <div className="mt-16 space-y-10">
           {CONSULTING_CASES.map((caseItem, index) => (
             <CaseBlock key={caseItem.id} caseItem={caseItem} index={index} />
           ))}

@@ -17,7 +17,7 @@ export function InnovationSection() {
           engineering, healthcare and embedded systems.
         </p>
 
-        <div className="mt-16 grid grid-cols-1 gap-8 lg:grid-cols-2">
+        <div className="mt-16 space-y-10">
           {PROJECTS.map((project, index) => (
             <ProjectBlock key={project.id} project={project} index={index} />
           ))}
