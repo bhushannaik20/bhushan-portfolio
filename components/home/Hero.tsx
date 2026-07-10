@@ -3,6 +3,7 @@ import Image from "next/image";
 import { ArrowDown } from "lucide-react";
 import { HERO_CONTENT, SITE_CONFIG } from "@/lib/constants";
 import { Reveal } from "@/components/ui/Reveal";
+import { TiltCard } from "@/components/ui/TiltCard";
 
 export function Hero() {
   return (
@@ -10,56 +11,54 @@ export function Hero() {
       id="home"
       className="relative flex min-h-screen items-center pt-16 lg:pt-20"
     >
-      <div className="mx-auto grid w-full max-w-[1280px] grid-cols-1 items-center gap-10 px-5 py-14 sm:px-6 sm:py-20 lg:grid-cols-5 lg:gap-16 lg:px-10">
-        {/* Left: Content */}
-        <div className="order-2 lg:order-1 lg:col-span-3">
+      <div className="mx-auto grid w-full max-w-[1180px] grid-cols-1 items-center gap-10 px-5 py-14 sm:px-6 sm:py-20 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 lg:px-10">
+        <div className="order-2 lg:order-1">
           <Reveal>
-            <span className="inline-block rounded-full border border-navy/20 bg-navy/5 px-4 py-1.5 text-xs font-bold text-navy">
-              {HERO_CONTENT.badge}
-            </span>
+            <div className="flex items-center gap-3">
+              <span className="hero-gradient-bar h-[3px] w-9" />
+              <span className="text-xs font-bold uppercase tracking-[0.15em] text-navy">
+                {HERO_CONTENT.badge}
+              </span>
+            </div>
           </Reveal>
 
           <Reveal delay={80}>
-            <p className="mt-4 text-xs font-bold uppercase tracking-[0.15em] text-text-muted">
-              {HERO_CONTENT.eyebrow}
-            </p>
-          </Reveal>
-
-          <Reveal delay={120}>
-            <div className="hero-gradient-bar mt-4 h-1 w-20 rounded-full" />
-          </Reveal>
-
-          <Reveal delay={160}>
-            <h1 className="mt-5 font-serif text-5xl font-bold leading-[1.05] tracking-[-0.02em] text-text-primary sm:text-6xl lg:text-[84px]">
+            <h1 className="mt-6 font-serif text-6xl font-bold leading-[0.92] tracking-[-0.04em] text-text-primary sm:text-7xl lg:text-[104px]">
               {HERO_CONTENT.name}
             </h1>
           </Reveal>
 
-          <Reveal delay={200}>
-            <p className="mt-4 text-xl font-semibold text-navy sm:text-2xl lg:text-[30px]">
+          <Reveal delay={140}>
+            <p className="mt-6 max-w-[640px] text-2xl font-semibold leading-[1.15] tracking-[-0.01em] text-navy sm:text-[32px]">
               {HERO_CONTENT.title}
             </p>
           </Reveal>
 
-          <Reveal delay={240}>
-            <p className="mt-6 max-w-[620px] text-base leading-relaxed text-text-muted lg:text-lg">
+          <Reveal delay={180}>
+            <p className="mt-5 max-w-[600px] text-base leading-relaxed text-text-muted lg:text-[17px]">
               {HERO_CONTENT.tagline}
             </p>
           </Reveal>
 
-          <Reveal delay={280}>
-            <div className="mt-10 flex flex-wrap items-center gap-3 sm:gap-4">
+          <Reveal delay={220}>
+            <p className="mt-2 text-xs font-bold uppercase tracking-[0.15em] text-text-muted">
+              {HERO_CONTENT.eyebrow}
+            </p>
+          </Reveal>
+
+          <Reveal delay={260}>
+            <div className="mt-9 flex flex-wrap items-center gap-3">
               <Link
                 href="/resume/bhushan-naik-resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-lg bg-navy px-6 py-3 text-xs font-bold uppercase tracking-wide text-white transition-all hover:-translate-y-0.5 hover:bg-navy-light active:translate-y-0 active:scale-95"
+                className="bg-navy px-6 py-3.5 text-xs font-bold uppercase tracking-[0.06em] text-white transition-all hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0"
               >
                 Resume
               </Link>
               <Link
                 href="/#contact"
-                className="rounded-lg border-2 border-navy px-6 py-3 text-xs font-bold uppercase tracking-wide text-navy transition-all hover:-translate-y-0.5 hover:bg-navy/5 active:translate-y-0 active:scale-95"
+                className="border border-navy bg-white px-6 py-3.5 text-xs font-bold uppercase tracking-[0.06em] text-navy transition-all hover:-translate-y-0.5 hover:bg-surface active:translate-y-0"
               >
                 Contact
               </Link>
@@ -67,7 +66,7 @@ export function Hero() {
                 href={SITE_CONFIG.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-lg bg-gold px-6 py-3 text-xs font-bold uppercase tracking-wide text-navy transition-all hover:-translate-y-0.5 hover:opacity-90 active:translate-y-0 active:scale-95"
+                className="border border-gold bg-gold px-6 py-3.5 text-xs font-bold uppercase tracking-[0.06em] text-text-primary transition-all hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0"
               >
                 LinkedIn
               </Link>
@@ -75,21 +74,25 @@ export function Hero() {
           </Reveal>
         </div>
 
-        {/* Right: Portrait */}
-        <Reveal
-          delay={120}
-          className="order-1 flex justify-center lg:order-2 lg:col-span-2 lg:justify-end"
-        >
-          <div className="group relative aspect-[4/5] w-full max-w-[380px] overflow-hidden rounded-xl border border-border shadow-sm transition-transform duration-500 hover:-translate-y-1 lg:aspect-auto lg:h-[600px] lg:w-[480px] lg:max-w-none">
-            <Image
-              src="/images/profile/portrait.jpg"
-              alt="Bhushan Naik"
-              fill
-              priority
-              className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
-              sizes="(max-width: 1024px) 90vw, 480px"
-            />
-          </div>
+        <Reveal delay={140} className="order-1 lg:order-2">
+          <TiltCard className="mx-auto flex min-h-[420px] w-full max-w-[420px] flex-col justify-between border border-border bg-white p-5 shadow-[0_26px_80px_rgba(16,18,23,0.10)] sm:min-h-[500px] lg:min-h-[600px] lg:max-w-none">
+            <span className="text-[11px] font-semibold uppercase tracking-[0.12em] text-text-muted">
+              Professional Headshot
+            </span>
+            <div className="relative my-4 flex-1 overflow-hidden border border-navy/15">
+              <Image
+                src="/images/profile/portrait.jpg"
+                alt="Bhushan Naik"
+                fill
+                priority
+                className="object-cover"
+                sizes="(max-width: 1024px) 90vw, 480px"
+              />
+            </div>
+            <span className="text-[11px] font-semibold uppercase tracking-[0.12em] text-text-muted">
+              Strategy · Innovation · Execution
+            </span>
+          </TiltCard>
         </Reveal>
       </div>
 

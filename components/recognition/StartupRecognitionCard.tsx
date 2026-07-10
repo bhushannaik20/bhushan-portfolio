@@ -2,11 +2,11 @@ import Image from "next/image";
 
 export function StartupRecognitionCard() {
   return (
-    <div className="mt-12 rounded-2xl border border-border bg-white p-8 shadow-sm">
+    <div className="mt-10 border border-border bg-white p-8">
       <p className="text-xs font-bold uppercase tracking-[0.15em] text-navy">
         Startup Recognition
       </p>
-      <h3 className="mt-3 font-serif text-2xl font-bold text-navy">
+      <h3 className="mt-3 font-serif text-2xl font-bold text-text-primary">
         SafeWay Innovations LLP
       </h3>
       <p className="mt-1 text-sm font-semibold text-text-muted">

@@ -1,7 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ExternalLink } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { ConsultingCase } from "@/types/consulting-case";
+import { TiltCard } from "@/components/ui/TiltCard";
+
+const TOP_BORDER = ["border-t-gold", "border-t-crimson", "border-t-forest"];
+const DOT_COLORS = ["bg-gold", "bg-navy", "bg-crimson"];
+const TAG_BORDER = ["border-l-navy", "border-l-crimson", "border-l-forest"];
 
 export function CaseBlock({
   caseItem,
@@ -11,120 +16,128 @@ export function CaseBlock({
   index: number;
 }) {
   return (
-    <div className="rounded-2xl border border-border bg-white p-6 shadow-sm lg:p-10">
-      <div className="grid grid-cols-1 gap-10 lg:grid-cols-[360px_1fr]">
-        <div>
-          <div className="relative aspect-[4/3] overflow-hidden rounded-xl border border-border bg-surface">
+    <article
+      className={`border-t-2 ${TOP_BORDER[index % 3]} py-12 first:border-t-0 first:pt-0 lg:py-16`}
+    >
+      <div className="grid grid-cols-1 gap-10 lg:grid-cols-[34%_1fr] lg:gap-14">
+        <div className="lg:sticky lg:top-24 lg:self-start">
+          <TiltCard className="relative aspect-[4/3] overflow-hidden border border-border bg-surface">
             <Image
               src={`/images/consulting/${caseItem.id}/cover.jpg`}
               alt={caseItem.title}
               fill
               className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 360px"
+              sizes="(max-width: 1024px) 100vw, 34vw"
             />
-          </div>
+          </TiltCard>
 
           <Link
             href={caseItem.presentationDeckUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-4 flex w-full items-center justify-center gap-2 rounded-lg bg-navy px-6 py-3.5 text-xs font-bold uppercase tracking-wide text-white shadow-sm transition-colors hover:bg-navy-light"
+            className="group mt-4 flex items-center justify-between border-b border-border pb-4 text-xs font-bold uppercase tracking-[0.06em] text-navy transition-all hover:pl-2 hover:text-crimson"
           >
             Presentation Deck
-            <ExternalLink className="h-3.5 w-3.5" strokeWidth={2} />
+            <ArrowUpRight
+              className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+              strokeWidth={2}
+            />
           </Link>
         </div>
 
         <div>
           <p className="text-xs font-bold uppercase tracking-[0.1em] text-navy">
-            {caseItem.consultingDomain.join(" · ")}
+            {String(index + 1).padStart(2, "0")} — {caseItem.consultingDomain.join(" · ")}
           </p>
-
-          <h3 className="mt-3 font-serif text-4xl font-bold leading-tight text-navy">
+          <h3 className="mt-3 font-serif text-4xl font-bold leading-[0.98] tracking-[-0.03em] text-text-primary lg:text-[52px]">
             {caseItem.title}
           </h3>
 
-          <div className="mt-6 grid grid-cols-1 border-t border-border sm:grid-cols-2">
-            <div className="border-b border-border py-3 sm:border-r sm:pr-6">
-              <p className="text-xs font-bold uppercase tracking-wide text-navy">
-                Domain
-              </p>
-              <p className="mt-1 text-[15px] font-semibold text-text-primary">
-                {caseItem.consultingDomain.join(" · ")}
-              </p>
-            </div>
-            <div className="border-b border-border py-3 sm:pl-6">
-              <p className="text-xs font-bold uppercase tracking-wide text-navy">
-                Client
-              </p>
+          <div className="mt-7 grid grid-cols-1 gap-px border border-border bg-border sm:grid-cols-2">
+            <div className="bg-white p-4">
+              <p className="text-[11px] font-bold uppercase tracking-[0.1em] text-navy">Client</p>
               <p className="mt-1 text-[15px] font-semibold text-text-primary">
                 {caseItem.client}
               </p>
             </div>
-            <div className="border-b border-border py-3 sm:border-r sm:pr-6">
-              <p className="text-xs font-bold uppercase tracking-wide text-navy">
+            <div className="bg-white p-4">
+              <p className="text-[11px] font-bold uppercase tracking-[0.1em] text-navy">Status</p>
+              <p className="mt-1 text-[15px] font-semibold text-crimson">
+                {caseItem.status}
+              </p>
+            </div>
+            <div className="bg-white p-4">
+              <p className="text-[11px] font-bold uppercase tracking-[0.1em] text-navy">
                 Organising Body
               </p>
               <p className="mt-1 text-[15px] font-semibold text-text-primary">
                 {caseItem.organisingBody.join(", ")}
               </p>
             </div>
-            <div className="border-b border-border py-3 sm:pl-6">
-              <p className="text-xs font-bold uppercase tracking-wide text-navy">
-                {caseItem.competition ? "Competition" : "Status"}
-              </p>
-              <p className="mt-1 text-[15px] font-semibold text-text-primary">
-                {caseItem.competition ?? caseItem.status}
-              </p>
-            </div>
+            {caseItem.competition && (
+              <div className="bg-white p-4">
+                <p className="text-[11px] font-bold uppercase tracking-[0.1em] text-navy">
+                  Competition
+                </p>
+                <p className="mt-1 text-[15px] font-semibold text-text-primary">
+                  {caseItem.competition}
+                </p>
+              </div>
+            )}
           </div>
 
-          <div className="mt-6">
-            <p className="text-xs font-bold uppercase tracking-wide text-navy">
-              Overview
-            </p>
-            <p className="mt-2 text-[15px] leading-relaxed text-text-muted lg:text-base">
+          <div className="mt-7">
+            <h4 className="text-xs font-bold uppercase tracking-[0.11em] text-navy">Overview</h4>
+            <p className="mt-2 max-w-[800px] text-[16px] leading-relaxed text-text-primary">
               {caseItem.executiveSummary}
             </p>
           </div>
 
-          <div className="mt-6">
-            <p className="text-xs font-bold uppercase tracking-wide text-navy">
+          <div className="mt-7">
+            <h4 className="text-xs font-bold uppercase tracking-[0.11em] text-crimson">
               Business Challenge
-            </p>
-            <p className="mt-2 text-[15px] leading-relaxed text-text-muted">
+            </h4>
+            <p className="mt-2 max-w-[800px] text-[16px] leading-relaxed text-text-primary">
               {caseItem.businessChallenge}
             </p>
           </div>
 
-          <div className="mt-6">
-            <p className="text-xs font-bold uppercase tracking-wide text-navy">
+          <div className="mt-7">
+            <h4 className="text-xs font-bold uppercase tracking-[0.11em] text-navy">
               Strategic Recommendation
-            </p>
-            <div className="mt-3 grid grid-cols-1 gap-x-6 gap-y-2 sm:grid-cols-2">
+            </h4>
+            <ul className="mt-3 columns-1 gap-x-10 sm:columns-2">
               {caseItem.strategicRecommendation.map((point, i) => (
-                <div key={i} className="flex items-start gap-2">
-                  <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gold" />
-                  <span className="text-sm leading-relaxed text-text-muted">
-                    {point}
-                  </span>
-                </div>
+                <li
+                  key={i}
+                  className="mb-2.5 flex items-start gap-2.5 break-inside-avoid"
+                >
+                  <span
+                    className={`mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full ${DOT_COLORS[i % 3]}`}
+                  />
+                  <span className="text-[15px] text-text-primary">{point}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="mt-7">
+            <h4 className="text-xs font-bold uppercase tracking-[0.11em] text-navy">
+              Frameworks
+            </h4>
+            <div className="mt-3 flex flex-wrap gap-2">
+              {caseItem.frameworks.map((framework, i) => (
+                <span
+                  key={framework}
+                  className={`border border-border ${TAG_BORDER[i % 3]} border-l-[3px] bg-white px-3 py-1.5 text-xs font-bold text-navy transition-transform hover:-translate-y-0.5`}
+                >
+                  {framework}
+                </span>
               ))}
             </div>
           </div>
-
-          <div className="mt-6 flex flex-wrap gap-2">
-            {caseItem.frameworks.map((framework) => (
-              <span
-                key={framework}
-                className="rounded-md bg-forest px-2.5 py-1 text-xs font-bold text-white"
-              >
-                {framework}
-              </span>
-            ))}
-          </div>
         </div>
       </div>
-    </div>
+    </article>
   );
 }
