@@ -2,24 +2,56 @@
 
 @theme {
   --font-sans: var(--font-sans);
-  --font-serif: var(--font-serif);
+  --font-serif: Georgia, 'Times New Roman', serif;
 
-  --color-navy: #253b80;
-  --color-navy-light: #1e326d;
-  --color-royal: #253b80;
-  --color-forest: #2e7d32;
-  --color-crimson: #c62828;
-  --color-gold: #d4a017;
-  --color-surface: #f8fafc;
-  --color-border: #e4e7ec;
-  --color-text-primary: #101828;
-  --color-text-muted: #667085;
+  --color-navy: #2b2b88;
+  --color-navy-light: #3d3da3;
+  --color-gold: #f4c430;
+  --color-forest: #1e8e5a;
+  --color-crimson: #cf2027;
+  --color-surface: #f7f8fb;
+  --color-border: #dfe3ea;
+  --color-text-primary: #101217;
+  --color-text-muted: #5f6673;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   color: var(--color-text-primary);
+  -webkit-tap-highlight-color: transparent;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: rgba(244, 196, 48, 0.3);
+  color: var(--color-text-primary);
 }
 
 .hero-gradient-bar {
-  background: linear-gradient(90deg, #253b80, #d4a017, #c62828);
+  background: linear-gradient(90deg, #2b2b88, #f4c430, #cf2027, #1e8e5a);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
