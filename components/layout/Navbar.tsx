@@ -30,26 +30,29 @@ export function Navbar() {
       <nav className="relative z-[110] mx-auto flex h-full max-w-[1280px] items-center justify-between px-5 sm:px-6 lg:px-10">
         <Link
           href="/#home"
-          className="flex items-center gap-2.5 sm:gap-3"
+          className="group flex items-center gap-2.5 sm:gap-3"
           onClick={() => setIsMobileMenuOpen(false)}
         >
-          <span className="flex h-8 w-8 items-center justify-center rounded-full bg-navy font-serif text-xs font-semibold text-white sm:h-9 sm:w-9 sm:text-sm">
-            {SITE_CONFIG.monogram}
+          <span className="relative flex h-8 w-8 items-center justify-center overflow-hidden border-2 border-navy sm:h-9 sm:w-9">
+            <span className="absolute bottom-0 left-0 h-[5px] w-full origin-left scale-x-[0.45] bg-gold transition-transform duration-300 group-hover:scale-x-100" />
+            <span className="relative font-serif text-[11px] font-extrabold text-navy sm:text-xs">
+              {SITE_CONFIG.monogram}
+            </span>
           </span>
-          <span className="font-serif text-base font-medium text-navy sm:text-lg">
+          <span className="font-bold text-[15px] tracking-[-0.01em] text-text-primary sm:text-base">
             {SITE_CONFIG.name}
           </span>
         </Link>
 
-        <ul className="hidden items-center gap-8 lg:flex">
+        <ul className="hidden items-center gap-7 lg:flex">
           {NAV_ITEMS.map((item) => (
             <li key={item.href}>
               <Link
                 href={item.href}
-                className="group relative text-sm font-medium text-text-primary"
+                className="group relative text-[13px] font-bold uppercase tracking-[0.06em] text-text-primary"
               >
                 {item.label}
-                <span className="absolute -bottom-1 left-0 h-[1.5px] w-0 bg-gold transition-all duration-300 group-hover:w-full" />
+                <span className="absolute -bottom-1.5 left-0 h-[2px] w-0 bg-gold transition-all duration-300 group-hover:w-full" />
               </Link>
             </li>
           ))}
@@ -101,7 +104,7 @@ export function Navbar() {
             >
               <Link
                 href={item.href}
-                className="block border-b border-border py-4 text-base font-medium text-text-primary active:text-navy"
+                className="block border-b border-border py-4 text-sm font-bold uppercase tracking-[0.06em] text-text-primary active:text-navy"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {item.label}

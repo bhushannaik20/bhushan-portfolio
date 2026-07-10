@@ -1,28 +1,31 @@
-import { GraduationCap, MapPin, Target, Sparkles, Languages } from "lucide-react";
+import { SectionHeader } from "@/components/layout/SectionHeader";
+import { Reveal } from "@/components/ui/Reveal";
 
 const ABOUT_INFO = [
-  { icon: GraduationCap, label: "Academic Status", value: "Bachelor of Engineering Graduate (2026)" },
-  { icon: GraduationCap, label: "Institution", value: "Fr. Conceicao Rodrigues College of Engineering" },
-  { icon: MapPin, label: "Location", value: "Mumbai, India" },
-  { icon: Target, label: "Career Goal", value: "Management Consulting" },
-  { icon: Sparkles, label: "Interests", value: "Strategy · Innovation · Sustainability" },
-  { icon: Languages, label: "Languages", value: "English · Hindi · Marathi" },
+  { label: "Academic Status", value: "Bachelor of Engineering Graduate (2026)" },
+  { label: "Institution", value: "Fr. Conceicao Rodrigues College of Engineering" },
+  { label: "Location", value: "Mumbai, India" },
+  { label: "Career Goal", value: "Management Consulting" },
+  { label: "Interests", value: "Strategy · Innovation · Sustainability" },
+  { label: "Languages", value: "English · Hindi · Marathi" },
 ];
 
 export function About() {
   return (
-    <section id="about" className="bg-surface py-24 lg:py-32">
-      <div className="mx-auto max-w-[1120px] px-6 lg:px-10">
-        <p className="text-xs font-medium uppercase tracking-[0.15em] text-navy">
-          About
-        </p>
-        <h2 className="mt-4 max-w-[700px] font-serif text-3xl font-semibold text-navy lg:text-5xl">
-          Building solutions at the intersection of strategy, technology, and
-          public impact.
-        </h2>
+    <section id="about" className="bg-surface py-20 lg:py-28">
+      <div className="mx-auto max-w-[1180px] px-5 sm:px-6 lg:px-10">
+        <Reveal>
+          <SectionHeader
+            kicker="About Me"
+            title="Building solutions at the intersection of strategy, technology, and public impact."
+            description="A leadership profile built on execution, not activity — selected technology products and consulting cases that demonstrate judgment, ownership, sector breadth, and communication."
+            markerColor="crimson"
+            shadowColor="forest"
+          />
+        </Reveal>
 
-        <div className="mt-16 grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16">
-          <div className="space-y-6 text-base leading-relaxed text-text-muted lg:text-lg">
+        <div className="mt-14 grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16">
+          <Reveal delay={80} className="space-y-6 text-base leading-relaxed text-text-muted lg:text-lg">
             <p>
               I am an engineering graduate driven by structured problem
               solving across sustainability, public policy, and enterprise
@@ -46,35 +49,25 @@ export function About() {
               scale — the same qualities that have shaped every project and
               case I have worked on.
             </p>
-          </div>
+          </Reveal>
 
-          <div className="overflow-hidden rounded-2xl border border-border bg-white shadow-sm">
-            {ABOUT_INFO.map((item, index) => {
-              const Icon = item.icon;
-              return (
+          <Reveal delay={140}>
+            <div className="border-t border-border">
+              {ABOUT_INFO.map((item) => (
                 <div
                   key={item.label}
-                  className={`flex items-start gap-4 px-6 py-5 ${
-                    index !== ABOUT_INFO.length - 1
-                      ? "border-b border-border"
-                      : ""
-                  }`}
+                  className="grid grid-cols-1 gap-1 border-b border-border py-4 transition-colors hover:bg-navy/[0.03] sm:grid-cols-[180px_1fr] sm:gap-6 sm:py-5"
                 >
-                  <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-navy/5">
-                    <Icon className="h-4 w-4 text-navy" strokeWidth={1.75} />
+                  <span className="text-xs font-bold uppercase tracking-[0.08em] text-navy">
+                    {item.label}
                   </span>
-                  <div>
-                    <p className="text-xs font-medium uppercase tracking-wide text-text-muted">
-                      {item.label}
-                    </p>
-                    <p className="mt-1 text-sm font-semibold text-navy">
-                      {item.value}
-                    </p>
-                  </div>
+                  <span className="text-[15px] font-semibold text-text-primary sm:text-base">
+                    {item.value}
+                  </span>
                 </div>
-              );
-            })}
-          </div>
+              ))}
+            </div>
+          </Reveal>
         </div>
       </div>
     </section>

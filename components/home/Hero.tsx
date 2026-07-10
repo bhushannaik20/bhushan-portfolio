@@ -66,7 +66,7 @@ export function Hero() {
                 href={SITE_CONFIG.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="border border-gold bg-gold px-6 py-3.5 text-xs font-bold uppercase tracking-[0.06em] text-text-primary transition-all hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0"
+                className="border-2 border-gold bg-white px-6 py-3.5 text-xs font-bold uppercase tracking-[0.06em] text-navy transition-all hover:-translate-y-0.5 hover:bg-gold/10 active:translate-y-0"
               >
                 LinkedIn
               </Link>

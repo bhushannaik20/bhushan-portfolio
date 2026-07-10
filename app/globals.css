@@ -30,6 +30,26 @@ body {
   color: var(--color-text-primary);
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-surface);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-navy);
+  border: 2px solid var(--color-surface);
+  border-radius: 100px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-navy-light);
+}
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-navy) var(--color-surface);
+}
+
 .hero-gradient-bar {
   background: linear-gradient(90deg, #2b2b88, #f4c430, #cf2027, #1e8e5a);
 }
