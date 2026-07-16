@@ -5,7 +5,7 @@ const ABOUT_INFO = [
   { label: "Academic Status", value: "Bachelor of Engineering Graduate (2026)" },
   { label: "Institution", value: "Fr. Conceicao Rodrigues College of Engineering" },
   { label: "Location", value: "Mumbai, India" },
-  { label: "Career Goal", value: "Management Consulting" },
+  { label: "Career Goal", value: "Strategy Consulting" },
   { label: "Interests", value: "Strategy · Innovation · Sustainability" },
   { label: "Languages", value: "English · Hindi · Marathi" },
 ];
@@ -43,7 +43,7 @@ export function About() {
               consulting engagements.
             </p>
             <p>
-              I am pursuing a career in management consulting because it
+              I am pursuing a career in strategy consulting because it
               combines the structured thinking, cross-industry exposure, and
               execution discipline required to solve complex problems at
               scale — the same qualities that have shaped every project and

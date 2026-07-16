@@ -12,9 +12,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Bhushan Naik | Aspiring Management Consultant",
+  title: "Bhushan Naik | Aspiring Strategy Consultant",
   description:
-    "Aspiring Management Consultant and Engineering Graduate building technology-led solutions across sustainability, healthcare, public policy, enterprise AI and digital transformation.",
+    "Aspiring Strategy Consultant and Engineering Graduate building technology-led solutions across sustainability, healthcare, public policy, enterprise AI and digital transformation.",
 };
 
 export default function RootLayout({

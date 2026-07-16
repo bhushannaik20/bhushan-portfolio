@@ -13,7 +13,7 @@ export const NAV_ITEMS = [
 
 export const SITE_CONFIG = {
   name: "Bhushan Naik",
-  title: "Aspiring Management Consultant",
+  title: "Aspiring Strategy Consultant",
   subtitle: "Engineering Graduate",
   monogram: "BN",
   linkedin: "https://www.linkedin.com/in/bhushannnaik/",
@@ -26,7 +26,7 @@ export const HERO_CONTENT = {
   badge: "Alumnus of Ministry of Education's Innovation Cell",
   eyebrow: "#ViksitBharat@2047",
   name: "Bhushan Naik",
-  title: "Aspiring Management Consultant",
+  title: "Aspiring Strategy Consultant",
   tagline:
     "Solving business, public-sector, and sustainability challenges through structured thinking, technology, and execution.",
 } as const;
