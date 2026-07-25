@@ -58,7 +58,7 @@ export function ContactSection() {
             </div>
 
             <Link
-              href="/resume/bhushan-naik-resume.pdf"
+              href={SITE_CONFIG.resume}
               target="_blank"
               rel="noopener noreferrer"
               className="mt-4 inline-flex items-center gap-2 rounded-lg border border-navy px-6 py-3 text-sm font-medium text-navy transition-colors hover:bg-surface"

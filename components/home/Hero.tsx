@@ -49,7 +49,7 @@ export function Hero() {
           <Reveal delay={260}>
             <div className="mt-9 flex flex-wrap items-center gap-3">
               <Link
-                href="/resume/bhushan-naik-resume.pdf"
+                href={SITE_CONFIG.resume}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-navy px-6 py-3.5 text-xs font-bold uppercase tracking-[0.06em] text-white transition-all hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0"
