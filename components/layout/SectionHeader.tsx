@@ -16,7 +16,7 @@ export function SectionHeader({
 }: {
   kicker: string;
   title: string;
-  description: string;
+  description?: string;
   markerColor?: Color;
   shadowColor?: Color;
 }) {
@@ -37,9 +37,11 @@ export function SectionHeader({
         <h2 className="font-serif text-3xl font-bold leading-[1.02] tracking-[-0.03em] text-text-primary sm:text-4xl lg:text-[52px]">
           {title}
         </h2>
-        <p className="mt-4 max-w-[700px] text-base text-text-muted lg:text-lg">
-          {description}
-        </p>
+        {description && (
+          <p className="mt-4 max-w-[700px] text-base text-text-muted lg:text-lg">
+            {description}
+          </p>
+        )}
       </div>
     </div>
   );

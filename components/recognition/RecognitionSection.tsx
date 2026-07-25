@@ -11,7 +11,6 @@ export function RecognitionSection() {
           <SectionHeader
             kicker="Recognition"
             title="Selected proof of leadership and execution."
-            description="Only high-signal outcomes are listed here — every achievement is verifiable and directly tied to national-level platforms."
             markerColor="gold"
             shadowColor="crimson"
           />

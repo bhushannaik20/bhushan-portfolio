@@ -19,10 +19,10 @@ export const EXPERIENCE: ExperienceEntry[] = [
     badge: "Pre-incubated · AIC-NIFIE, IIM Mumbai",
     description: [
       "Founded a technology venture focused on sustainability, mobility, and public sector innovation, translating research and hackathon-winning prototypes into deployable products.",
-      "Led product strategy and cross-functional execution across engineering, design, and go-to-market for multiple platforms including Urja Shakti and Varsha Bandhan.",
-      "Secured pre-incubation under AIC-NIFIE, Indian Institute of Management Mumbai, supporting structured venture development.",
-      "Signed 3 Memorandums of Understanding with local solar vendors across Vasai–Virar for pilot testing and R&D.",
-      "Built and managed a multidisciplinary founding team spanning engineering, design, and business development.",
+      "Led development of B2B/B2C solar and rainwater harvesting platforms aligned with the UN SDGs and Viksit Bharat @2047, securing 6+ strategic vendor MoUs across Vasai–Virar for pilot testing and R&D.",
+      "Directed product strategy, channel partnerships, and cross-functional execution across engineering, design, and go-to-market.",
+      "Developed 15+ solutions under national innovation initiatives supported by the Ministry of Education, MoSPI, and the Ministry of Jal Shakti.",
+      "Pre-incubated at AIC-NIFIE, IIM Mumbai; shortlisted for AICTE APF & YUKTI 2025 (Government of India).",
     ],
   },
   {
@@ -32,12 +32,12 @@ export const EXPERIENCE: ExperienceEntry[] = [
     duration: "2017 — 2021",
     description: [
       "Built and managed an independent content channel from the ground up, covering content strategy, production, and audience engagement.",
-      "Grew a subscriber base of 400+ and accumulated 25,000+ views through consistent content planning and execution.",
+      "Grew a subscriber base of 300+ and accumulated 25,000+ views through consistent content planning and execution.",
       "Developed early skills in communication, consistency, and public-facing presentation that continue to inform current work.",
     ],
     stats: [
       { label: "Views", value: "25,000+" },
-      { label: "Subscribers", value: "400+" },
+      { label: "Subscribers", value: "300+" },
     ],
   },
 ];

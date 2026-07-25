@@ -2,7 +2,10 @@ import { SectionHeader } from "@/components/layout/SectionHeader";
 import { Reveal } from "@/components/ui/Reveal";
 
 const ABOUT_INFO = [
-  { label: "Academic Status", value: "Bachelor of Engineering Graduate (2026)" },
+  {
+    label: "Academic Status",
+    value: "Bachelor of Engineering in Electronics and Computer Science Graduate (2026)",
+  },
   { label: "Institution", value: "Fr. Conceicao Rodrigues College of Engineering" },
   { label: "Location", value: "Mumbai, India" },
   { label: "Career Goal", value: "Strategy Consulting" },
@@ -18,7 +21,6 @@ export function About() {
           <SectionHeader
             kicker="About Me"
             title="Building solutions at the intersection of strategy, technology, and public impact."
-            description="A leadership profile built on execution, not activity — selected technology products and consulting cases that demonstrate judgment, ownership, sector breadth, and communication."
             markerColor="crimson"
             shadowColor="forest"
           />
@@ -35,7 +37,7 @@ export function About() {
               designing a solution.
             </p>
             <p>
-              I work at the intersection of technology and strategy —
+              I work at the intersection of technology and strategy 
               building platforms for renewable energy adoption, public health
               intelligence, and enterprise decision-making, while also
               advising organizations on growth strategy, market entry, and
@@ -46,7 +48,7 @@ export function About() {
               I am pursuing a career in strategy consulting because it
               combines the structured thinking, cross-industry exposure, and
               execution discipline required to solve complex problems at
-              scale — the same qualities that have shaped every project and
+              scale the same qualities that have shaped every project and
               case I have worked on.
             </p>
           </Reveal>

@@ -26,6 +26,12 @@ export function PublicationBlock({
             {publication.summary}
           </p>
 
+          {publication.citation && (
+            <p className="mt-4 border-l-2 border-border pl-4 font-mono text-xs leading-relaxed text-text-muted">
+              {publication.citation}
+            </p>
+          )}
+
           {publication.url ? (
             <Link
               href={publication.url}

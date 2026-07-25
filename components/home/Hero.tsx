@@ -75,11 +75,8 @@ export function Hero() {
         </div>
 
         <Reveal delay={140} className="order-1 lg:order-2">
-          <TiltCard className="mx-auto flex min-h-[420px] w-full max-w-[420px] flex-col justify-between border border-border bg-white p-5 shadow-[0_26px_80px_rgba(16,18,23,0.10)] sm:min-h-[500px] lg:min-h-[600px] lg:max-w-none">
-            <span className="text-[11px] font-semibold uppercase tracking-[0.12em] text-text-muted">
-              Professional Headshot
-            </span>
-            <div className="relative my-4 flex-1 overflow-hidden border border-navy/15">
+          <TiltCard className="mx-auto flex min-h-[420px] w-full max-w-[420px] flex-col justify-end border border-border bg-white p-5 shadow-[0_26px_80px_rgba(16,18,23,0.10)] sm:min-h-[500px] lg:min-h-[600px] lg:max-w-none">
+            <div className="relative -m-5 mb-4 aspect-[4/5] overflow-hidden lg:flex-1 lg:aspect-auto">
               <Image
                 src="/images/profile/portrait.jpg"
                 alt="Bhushan Naik"
