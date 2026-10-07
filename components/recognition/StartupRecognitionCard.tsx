@@ -25,7 +25,7 @@ export function StartupRecognitionCard() {
       <div className="mt-6 flex flex-wrap items-center gap-8 border-t border-border pt-6">
         <div className="relative h-10 w-28">
           <Image
-            src="/images/logos/safeway.png"
+            src="/logos/safewaylogo.jpg"
             alt="SafeWay Innovations LLP"
             fill
             className="object-contain object-left"
@@ -33,7 +33,7 @@ export function StartupRecognitionCard() {
         </div>
         <div className="relative h-10 w-28">
           <Image
-            src="/images/logos/iim-mumbai.png"
+            src="/logos/iimlogo.jpeg"
             alt="IIM Mumbai"
             fill
             className="object-contain object-left"
