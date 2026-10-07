@@ -32,12 +32,12 @@ export const EXPERIENCE: ExperienceEntry[] = [
     duration: "2017 — 2021",
     description: [
       "Built and managed an independent content channel from the ground up, covering content strategy, production, and audience engagement.",
-      "Grew a subscriber base of 300+ and accumulated 25,000+ views through consistent content planning and execution.",
+      "Grew a subscriber base of 350+ and accumulated 25,000+ views through consistent content planning and execution.",
       "Developed early skills in communication, consistency, and public-facing presentation that continue to inform current work.",
     ],
     stats: [
       { label: "Views", value: "25,000+" },
-      { label: "Subscribers", value: "300+" },
+      { label: "Subscribers", value: "350+" },
     ],
   },
 ];
