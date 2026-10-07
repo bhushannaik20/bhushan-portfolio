@@ -14,7 +14,7 @@ export const EXPERIENCE: ExperienceEntry[] = [
     id: "safeway",
     role: "Founder",
     organization: "SafeWay Innovations LLP",
-    duration: "February 2024 — Present",
+    duration: "April 2026 — Present",
     location: "Mumbai, India",
     badge: "Pre-incubated · AIC-NIFIE, IIM Mumbai",
     description: [
