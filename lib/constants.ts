@@ -21,7 +21,7 @@ export const SITE_CONFIG = {
   phone: "+91 7745066672",
   youtube: "https://www.youtube.com/@bhushannaik2793",
   resume:
-    "https://drive.google.com/file/d/1s84FtaU_nn3LOOiwrQYVd_9K3Wwm8gwe/view?usp=sharing",
+    "https://drive.google.com/file/d/1bMQMhw7J8PgxHBqPl5E_f8gMrhWnBVBH/view?usp=sharing",
 } as const;
 
 export const HERO_CONTENT = {
