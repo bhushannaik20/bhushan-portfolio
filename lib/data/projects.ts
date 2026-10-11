@@ -207,7 +207,7 @@ export const PROJECTS: Project[] = [
       "Reduces manual standards-verification effort for engineering teams",
       "Improves consistency and auditability of material selection decisions",
     ],
-    liveDemoUrl: "#",
+    liveDemoUrl: "https://drishtiai-alpha.vercel.app/setup",
   },
   {
     id: "nirmal-data",
