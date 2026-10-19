@@ -1,17 +1,7 @@
+
+import Image from "next/image";
 import { SectionHeader } from "@/components/layout/SectionHeader";
 import { Reveal } from "@/components/ui/Reveal";
-
-const ABOUT_INFO = [
-  {
-    label: "Academic Status",
-    value: "Bachelor of Engineering in Electronics and Computer Science Graduate (2026)",
-  },
-  { label: "Institution", value: "Fr. Conceicao Rodrigues College of Engineering" },
-  { label: "Location", value: "Mumbai, India" },
-  { label: "Career Goal", value: "Strategy Consulting" },
-  { label: "Interests", value: "Strategy · Innovation · Sustainability" },
-  { label: "Languages", value: "English · Hindi · Marathi" },
-];
 
 export function About() {
   return (
@@ -26,49 +16,59 @@ export function About() {
           />
         </Reveal>
 
-        <div className="mt-14 grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16">
-          <Reveal delay={80} className="space-y-6 text-base leading-relaxed text-text-muted lg:text-lg">
-            <p>
-              I am an engineering graduate driven by structured problem
-              solving across sustainability, public policy, and enterprise
-              technology. My work spans national hackathons, product
-              development, and strategic consulting cases, each grounded in
-              understanding a real business or governance challenge before
-              designing a solution.
-            </p>
-            <p>
-              I work at the intersection of technology and strategy 
-              building platforms for renewable energy adoption, public health
-              intelligence, and enterprise decision-making, while also
-              advising organizations on growth strategy, market entry, and
-              organizational transformation through case competitions and
-              consulting engagements.
-            </p>
-            <p>
-              I am pursuing a career in strategy consulting because it
-              combines the structured thinking, cross-industry exposure, and
-              execution discipline required to solve complex problems at
-              scale the same qualities that have shaped every project and
-              case I have worked on.
+        <div className="mt-14 grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-16">
+          {/* Left: Presentation Photo */}
+          <Reveal delay={80}>
+            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-sm bg-border">
+              <Image
+                src="/images/about/iit-guwahati-presentation.jpeg"
+                alt="Bhushan Naik presenting a case solution at IIT Guwahati"
+                fill
+                priority={false}
+                sizes="(max-width: 1023px) 100vw, 50vw"
+                className="object-cover object-center"
+              />
+            </div>
+
+            <p className="mt-3 text-sm text-text-muted">
+              Case Presentation · IIT Guwahati
             </p>
           </Reveal>
 
-          <Reveal delay={140}>
-            <div className="border-t border-border">
-              {ABOUT_INFO.map((item) => (
-                <div
-                  key={item.label}
-                  className="grid grid-cols-1 gap-1 border-b border-border py-4 transition-colors hover:bg-navy/[0.03] sm:grid-cols-[180px_1fr] sm:gap-6 sm:py-5"
-                >
-                  <span className="text-xs font-bold uppercase tracking-[0.08em] text-navy">
-                    {item.label}
-                  </span>
-                  <span className="text-[15px] font-semibold text-text-primary sm:text-base">
-                    {item.value}
-                  </span>
-                </div>
-              ))}
-            </div>
+          {/* Right: Biography */}
+          <Reveal
+            delay={160}
+            className="space-y-6 text-base leading-relaxed text-text-muted lg:text-lg"
+          >
+            <p>
+              Bhushan Naik is the Founder of SafeWay Innovations LLP and an
+              engineering graduate from Fr. Conceicao Rodrigues College of
+              Engineering, University of Mumbai. Combining entrepreneurial
+              drive with strategic thinking, he brings a track record of
+              national-level leadership across innovation, entrepreneurship,
+              and technology-driven initiatives.
+            </p>
+
+            <p>
+              His work spans renewable energy, road safety, product innovation,
+              and digital platforms, alongside exposure to FMCG, consulting,
+              and product management (PMx). He has pitched and presented ideas
+              to 50+ entrepreneurs, investors, and C-suite executives. As an
+              alumnus of the Ministry of Education's Innovation Cell, he works
+              at the intersection of technology, policy, and entrepreneurship.
+            </p>
+
+            <p>
+              Driven by the vision of Viksit Bharat 2047, Bhushan is focused
+              on building ventures and strategies that contribute to India's
+              long-term growth. He welcomes collaborations across
+              entrepreneurship, renewable energy, FMCG innovation, consulting,
+              and product strategy.
+            </p>
+
+            <p className="pt-2 text-sm font-semibold tracking-wide text-navy lg:text-base">
+              Top Skills: Leadership · Problem Solving · Operations Management
+            </p>
           </Reveal>
         </div>
       </div>
